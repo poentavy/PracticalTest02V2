@@ -83,7 +83,7 @@ public class PracticalTest02V2MainActivity extends AppCompatActivity {
         getWordButton.setOnClickListener(getWordButtonClickListener);
         wordTextView = (TextView)findViewById(R.id.info_view);
     }
-
+    //final push
     @Override
     protected void onDestroy() {
         Log.i(Constants.TAG, "[MAIN ACTIVITY] onDestroy() callback method has been invoked");
