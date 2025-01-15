@@ -1,5 +1,6 @@
 package ro.pub.cs.systems.eim.practicaltest02v2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -20,6 +21,8 @@ public class PracticalTest02V2MainActivity extends AppCompatActivity {
     private EditText wordEditText = null;
     private TextView wordTextView = null;
 
+    private Button openPythonActivityButton;
+
     private ServerThread serverThread = null;
 
     private final ConnectButtonClickListener connectButtonClickListener = new ConnectButtonClickListener();
@@ -39,6 +42,8 @@ public class PracticalTest02V2MainActivity extends AppCompatActivity {
             }
             serverThread.start();
         }
+
+
     }
 
     private final GetWordButtonClickListener getWordButtonClickListener = new GetWordButtonClickListener();
@@ -82,6 +87,15 @@ public class PracticalTest02V2MainActivity extends AppCompatActivity {
         Button getWordButton = (Button)findViewById(R.id.get_info);
         getWordButton.setOnClickListener(getWordButtonClickListener);
         wordTextView = (TextView)findViewById(R.id.info_view);
+
+        openPythonActivityButton = findViewById(R.id.jump_to_python);
+        openPythonActivityButton.setOnClickListener(view -> {
+            Intent intent = new Intent(PracticalTest02V2MainActivity.this, PythonServerActivity.class);
+            startActivity(intent);
+        });
+
+
+
     }
     //final push
     @Override
